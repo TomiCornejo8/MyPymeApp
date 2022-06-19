@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductosScreenComponent } from './screens/productos-screen/productos-screen.component';
+import { GastosScreenComponent } from './screens/gastos-screen/gastos-screen.component';
+import { ProveedoresScreenComponent } from './screens/proveedores-screen/proveedores-screen.component';
+import { VentasScreenComponent } from './screens/ventas-screen/ventas-screen.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'', redirectTo:'/productos-screen', pathMatch:'full'},
+  {path:'productos-screen', component:ProductosScreenComponent},
+  {path:'gastos-screen', component:GastosScreenComponent},
+  {path:'proveedores-screen', component:ProveedoresScreenComponent},
+  {path:'ventas-screen', component:VentasScreenComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
