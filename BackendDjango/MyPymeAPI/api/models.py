@@ -28,7 +28,7 @@ class MetodoPago(models.Model):
 
 class Venta(models.Model):
     pyme = models.ForeignKey(Pyme,on_delete=models.CASCADE)
-    metodoPago = models.ForeignKey(MetodoPago)
+    metodoPago = models.ForeignKey(MetodoPago,on_delete=models.CASCADE)
     productos = models.ManyToManyField(Producto)
     fecha = models.DateTimeField(auto_now=False)
     montoTotal = models.PositiveIntegerField()
