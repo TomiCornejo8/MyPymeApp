@@ -11,6 +11,7 @@ import { VentasScreenComponent } from './screens/ventas-screen/ventas-screen.com
 import { GastosScreenComponent } from './screens/gastos-screen/gastos-screen.component';
 import { FormsModule } from '@angular/forms';
 import { TarjetaProductoComponent } from './components/tarjeta-producto/tarjeta-producto.component';
+import { CategoriaComponent } from './components/categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TarjetaProductoComponent } from './components/tarjeta-producto/tarjeta-
     ProveedoresScreenComponent,
     VentasScreenComponent,
     GastosScreenComponent,
-    TarjetaProductoComponent
+    TarjetaProductoComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,
