@@ -14,6 +14,16 @@ import { TarjetaProductoComponent } from './components/tarjeta-producto/tarjeta-
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { ProveedorComponent } from './components/proveedor/proveedor.component';
 import { ListaComponent } from './components/lista/lista.component';
+import { PopupProductoComponent } from './components/popup-producto/popup-producto.component';
+import { PopupCategoriaComponent } from './components/popup-categoria/popup-categoria.component';
+import { PopupInsumoComponent } from './components/popup-insumo/popup-insumo.component';
+import { IngresarScreenComponent } from './screens/ingresar-screen/ingresar-screen.component';
+import { RegistrarseScreenComponent } from './screens/registrarse-screen/registrarse-screen.component';
+import { InicioScreenComponent } from './screens/inicio-screen/inicio-screen.component';
+import { NavbarInicioComponent } from './components/navbar-inicio/navbar-inicio.component';
+import { IngresarComponent } from './components/ingresar/ingresar.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { PopupProveedorComponent } from './components/popup-proveedor/popup-proveedor.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +37,17 @@ import { ListaComponent } from './components/lista/lista.component';
     TarjetaProductoComponent,
     CategoriaComponent,
     ProveedorComponent,
-    ListaComponent
+    ListaComponent,
+    PopupProductoComponent,
+    PopupCategoriaComponent,
+    PopupInsumoComponent,
+    IngresarScreenComponent,
+    RegistrarseScreenComponent,
+    InicioScreenComponent,
+    NavbarInicioComponent,
+    IngresarComponent,
+    RegistrarseComponent,
+    PopupProveedorComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <!--BOTON DE LOGO-->
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/inicio-screen']">
+            <img src="../../../assets/Tiburon blanco.png" alt="" width="55" height="54" class="d-inline-block align-text-top">
+        </a>
+
+        <div class="" id="navbarColor01">
+            <ul class="navbar-nav mb-2 mb-lg-0 list-group-horizontal" id="navbar">
+
+                <!--boton de Productos-->
+                <li class="nav-item btn-dark ms-4">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/ingresar-screen']">Ingresar</a>
+                </li>
+
+                <!--boton de Registrarse-->
+                <li class="nav-item btn-dark ms-4">
+                    <a class="nav-link active" aria-current="page" [routerLink]="['/registrarse-screen']">Registrarse</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
