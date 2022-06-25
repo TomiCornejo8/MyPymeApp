@@ -10,15 +10,17 @@ export class PopupProductoComponent implements OnInit {
 
   @Output() subirProducto = new EventEmitter<Producto>();
 
-  id:number = -1;
+  id:number = 1;
   nombre:string = '';
-  stock:number = -1;
-  precio:number = -1;
-  ranking:number = -1;
+  stock:number = 0;
+  precio:number = 0;
+  ranking:number = 0;
   categoria:string = '';
   img:string = '';
 
   flag:boolean = false;
+
+  
 
   constructor() { }
 
@@ -27,7 +29,7 @@ export class PopupProductoComponent implements OnInit {
 
   cancelar(){
     this.nombre = '';
-    this.stock = this.precio = -1;
+    this.stock = this.precio = 0;
   }
 
   publicar(){
@@ -37,7 +39,7 @@ export class PopupProductoComponent implements OnInit {
   }
   // || this.categoria == ''
   camposLlenos(){
-    if(this.nombre == '' || this.stock == -1 || this.precio == -1){
+    if(this.nombre == '' || this.stock == 0 || this.precio == 0){
       this.flag = false;
     }else{
       this.flag = true;

@@ -6,11 +6,17 @@
     <div class="modal-dialog">
 
         <div class="modal-content bg-primary container bg-primary p-3">
-            <div class="mb-2 row">
-                <label for="nombreCategoria" class="col-sm-2 col-form-label text-white">Nombre</label>
-                <div class="col-sm-10">
-                    <input (keyup)="camposLlenos()" [(ngModel)]="nombre" class="form-control" type="text" aria-label="default input example" id="nombreCategoria">
+            <div class="modal-body">
+                <div class="mb-2 row">
+                    <label for="nombreCategoria" class="col-sm-2 col-form-label text-white">Nombre</label>
+                    <div class="col-sm-10">
+                        <input (keyup)="camposLlenos()" [(ngModel)]="nombre" class="form-control" type="text" aria-label="default input example" id="nombreCategoria">
+                    </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button (click)="cancelar()" type="button" class="btn btn-secondary bg-gradient border-dark" data-bs-dismiss="modal">Cancelar</button>
+                <button *ngIf="flag" (click)="publicar()" id="botonPublicar" type="button" class="btn btn-dark bg-gradient border-dark" data-bs-dismiss="modal">Publicar</button>
             </div>
         </div>
     </div>
