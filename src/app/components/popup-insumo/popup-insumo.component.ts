@@ -25,7 +25,7 @@ export class PopupInsumoComponent implements OnInit {
   }
 
   publicar(){
-    this.subirInsumo.emit(new Insumo(this.nombreInsumo,this.precioInsumo));
+    //this.subirInsumo.emit(new Insumo(this.nombreInsumo,this.precioInsumo));
     this.cancelar();
     this.flag = false;
   }

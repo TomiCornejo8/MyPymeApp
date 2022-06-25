@@ -1,9 +1,11 @@
 export class Insumo{
-    nombreInsumo:string;
-    precioInsumo:number;
+    id:number;
+    nombre:string;
+    precio:number;
 
-    constructor(nombreInsumo:string,precioInsumo:number){
-        this.nombreInsumo = nombreInsumo;
-        this.precioInsumo = precioInsumo;
+    constructor(id:number,nombre:string,precio:number){
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
     }
 }
