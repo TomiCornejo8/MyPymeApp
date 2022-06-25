@@ -10,7 +10,8 @@ export class PopupCategoriaComponent implements OnInit {
 
   @Output() subirCategoria = new EventEmitter<Categoria>();
 
-  nombreCategoria:string = '';
+  id:number = -1;
+  nombre:string = '';
   flag:boolean = false;
 
   constructor() { }
@@ -19,17 +20,18 @@ export class PopupCategoriaComponent implements OnInit {
   }
 
   cancelar(){
-    this.nombreCategoria = '';
+    this.id = -1;
+    this.nombre = '';
   }
 
   publicar(){
-    this.subirCategoria.emit(new Categoria(this.nombreCategoria));
+    this.subirCategoria.emit(new Categoria(this.id,this.nombre));
     this.cancelar();
     this.flag = false;
   }
 
   camposLlenos(){
-    if(this.nombreCategoria == ''){
+    if(this.id == -1 || this.nombre == ''){
       this.flag = false;
     }else{
       this.flag = true;

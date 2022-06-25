@@ -11,7 +11,8 @@ describe('TarjetaProductoComponent', () => {
       declarations: [ TarjetaProductoComponent ]
     })
     .compileComponents();
-
+  });
+  beforeEach(() => {
     fixture = TestBed.createComponent(TarjetaProductoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

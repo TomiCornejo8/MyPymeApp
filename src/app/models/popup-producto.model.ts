@@ -1,11 +1,19 @@
 export class Producto{
-    nombreProducto:string;
-    stockProducto:number;
-    precioProducto:number;
+    id:number;
+    nombre:string;
+    stock:number;
+    precio:number;
+    ranking:number;
+    categoria:string;
+    img:string
 
-    constructor(nombreProducto:string,stockProducto:number,precioProducto:number){
-        this.nombreProducto = nombreProducto;
-        this.stockProducto = stockProducto;
-        this.precioProducto = precioProducto;
+    constructor(id:number,nombre:string,stock:number,precio:number,ranking:number,categoria:string,img:string){
+        this.id = id;
+        this.nombre = nombre;
+        this.stock = stock;
+        this.precio = precio;
+        this.ranking = ranking;
+        this.categoria = categoria;
+        this.img = img;
     }
 }

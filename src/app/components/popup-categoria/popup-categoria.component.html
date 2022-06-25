@@ -1,6 +1,6 @@
 <button id="comentario" type="button" class="btn btn-success bg-gradient" data-bs-toggle="modal"
     data-bs-target="#categoriaModal">
-    Agregar post ✉
+    categoria ✉
 </button>
 <div class="modal fade " id="categoriaModal" tabindex="-1" aria-labelledby="categoriaModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -9,7 +9,7 @@
             <div class="mb-2 row">
                 <label for="nombreCategoria" class="col-sm-2 col-form-label text-white">Nombre</label>
                 <div class="col-sm-10">
-                    <input (keyup)="camposLlenos()" [(ngModel)]="nombreCategoria" class="form-control" type="text" aria-label="default input example" id="nombreCategoria">
+                    <input (keyup)="camposLlenos()" [(ngModel)]="nombre" class="form-control" type="text" aria-label="default input example" id="nombreCategoria">
                 </div>
             </div>
         </div>

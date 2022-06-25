@@ -7,22 +7,23 @@
     <div class="modal-dialog">
 
         <div class="modal-content bg-primary container bg-primary p-3">
+            
             <div class="mb-2 row">
                 <label for="nombreProducto" class="col-sm-2 col-form-label text-white">Nombre</label>
                 <div class="col-sm-10">
-                    <input (keyup)="camposLlenos()" [(ngModel)]="nombreProducto" class="form-control" type="text" aria-label="default input example" id="nombreProducto">
+                    <input (keyup)="camposLlenos()" [(ngModel)]="nombre" class="form-control" type="text" aria-label="default input example" id="nombreProducto">
                 </div>
             </div>
             <div class="mb-2 row">
                 <label for="stockProducto" class="col-sm-2 col-form-label text-white">Stock</label>
                 <div class="col-sm-10">
-                    <input (keyup)="camposLlenos()" [(ngModel)]="stockProducto" class="form-control" type="text" aria-label="default input example" id="stockProducto">
+                    <input (keyup)="camposLlenos()" [(ngModel)]="stock" class="form-control" type="text" aria-label="default input example" id="stockProducto">
                 </div>
             </div>
             <div class="mb-2 row">
                 <label for="precioProducto" class="col-sm-2 col-form-label text-white">Precio</label>
                 <div class="col-sm-10">
-                    <input (keyup)="camposLlenos()" [(ngModel)]="precioProducto" class="form-control" type="text" aria-label="default input example" id="precioProducto">
+                    <input (keyup)="camposLlenos()" [(ngModel)]="precio" class="form-control" type="text" aria-label="default input example" id="precioProducto">
                 </div>
             </div>
             <div class="row">

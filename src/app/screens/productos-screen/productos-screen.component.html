@@ -5,12 +5,13 @@
 <section class="container-fluid p-0 align-items ">
     <div class="row">
         <div class="col-2">
-            <app-coleccion></app-coleccion>
+            <app-coleccion ></app-coleccion>
         </div>
         <div class="row col-6 pt-3 align-items">
             <div class="col-6 ">
-                <app-tarjeta-producto></app-tarjeta-producto>
+                <app-popup-producto (subirProducto)="modalProducto($event)"></app-popup-producto>
             </div>
+            <app-tarjeta-producto *ngFor="let tarjetaProducto of productos" [tarjetaProducto]="tarjetaProducto"></app-tarjeta-producto>
         </div>
         <div class="col-4">
             <app-lista></app-lista>

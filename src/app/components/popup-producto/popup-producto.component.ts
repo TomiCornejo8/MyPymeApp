@@ -10,9 +10,14 @@ export class PopupProductoComponent implements OnInit {
 
   @Output() subirProducto = new EventEmitter<Producto>();
 
-  nombreProducto:string = '';
-  stockProducto:number = -1;
-  precioProducto:number = -1;
+  id:number = -1;
+  nombre:string = '';
+  stock:number = -1;
+  precio:number = -1;
+  ranking:number = -1;
+  categoria:string = '';
+  img:string = '';
+
   flag:boolean = false;
 
   constructor() { }
@@ -21,18 +26,18 @@ export class PopupProductoComponent implements OnInit {
   }
 
   cancelar(){
-    this.nombreProducto = '';
-    this.stockProducto = this.precioProducto = -1;
+    this.nombre = '';
+    this.stock = this.precio = -1;
   }
 
   publicar(){
-    this.subirProducto.emit(new Producto(this.nombreProducto,this.stockProducto,this.precioProducto));
+    this.subirProducto.emit(new Producto(this.id,this.nombre,this.stock,this.precio,this.ranking,this.categoria,this.img));
     this.cancelar();
     this.flag = false;
   }
-
+  // || this.categoria == ''
   camposLlenos(){
-    if(this.nombreProducto == '' || this.stockProducto == -1 || this.precioProducto == -1){
+    if(this.nombre == '' || this.stock == -1 || this.precio == -1){
       this.flag = false;
     }else{
       this.flag = true;

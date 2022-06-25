@@ -1,12 +1,11 @@
 export class Proveedor{
-    nombreProveedor:string;
-    emailProveedor:string;
-    telefonoProveedor:string;
-    // imagen:string;
+    nombre:string;
+    email:string;
+    telefono:string;
 
-    constructor(nombreProveedor:string,emailProveedor:string,telefonoProveedor:string){
-        this.nombreProveedor = nombreProveedor;
-        this.emailProveedor = emailProveedor;
-        this.telefonoProveedor = telefonoProveedor;
+    constructor(nombre:string,email:string,telefono:string){
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
     }
 }

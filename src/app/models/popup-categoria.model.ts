@@ -1,7 +1,9 @@
 export class Categoria{
-    nombreCategoria:string;
+    id:number;
+    nombre:string;
 
-    constructor(nombreCategoria:string){
-        this.nombreCategoria = nombreCategoria;
+    constructor(id:number,nombre:string){
+        this.id = id;
+        this.nombre = nombre;
     }
 }
