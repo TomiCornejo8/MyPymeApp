@@ -1,36 +1,51 @@
-<button id="comentario" type="button" class="btn btn-dark bg-gradient" data-bs-toggle="modal"
-    data-bs-target="#proveedorModal">
-    proveedor
+<button id="comentario" type="button" class="btn btn-dark bg-gradient" data-bs-toggle="modal" data-bs-target="#proveedorModal">
+    ➕
 </button>
 
 <div class="modal fade " id="proveedorModal" tabindex="-1" aria-labelledby="proveedorModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
         <div class="modal-content bg-primary">
+            <div class="modal-header">
+                <h5 class="modal-title text-white" id="exampleModalLabel"><b>Agregar proveedor</b></h5>
+            </div>
+
             <div class="modal-body container p-3">
+                
                 <div class="mb-2 row">
                     <label for="nombreProveedor" class="col-sm-2 col-form-label text-white">Nombre</label>
                     <div class="col-sm-10">
                         <input (keyup)="camposLlenos()" class="form-control" type="text" aria-label="default input example" id="nombreProveedor" [(ngModel)]="nombreProveedor">
                     </div>
                 </div>
+
                 <div class="mb-2 row">
                     <label for="emailProveedor" class="col-sm-2 col-form-label text-white">Email</label>
                     <div class="col-sm-10">
                         <input (keyup)="camposLlenos()" [(ngModel)]="emailProveedor" class="form-control" type="text" aria-label="default input example" id="emailProveedor">
                     </div>
                 </div>
+
                 <div class="mb-2 row">
                     <label for="telefonoProveedor" class="col-sm-2 col-form-label text-white">Telefono</label>
                     <div class="col-sm-10">
                         <input (keyup)="camposLlenos()" [(ngModel)]="telefonoProveedor" class="form-control" type="text" aria-label="default input example" id="telefonoProveedor">
                     </div>
                 </div>
+
+                <div class="mb-2 row dropdown">
+                    <button class="btn btn-primary bg-primary border-white dropdown-toggle bg-gradient border-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <b>{{categoriaX}}</b>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark bg-primary" aria-labelledby="dropdownMenuButton1">
+                        <li><a (click)="selecCategoria(categoria.nombre)" *ngFor="let categoria of categorias" class="dropdown-item" >{{categoria.nombre}}</a></li>
+                    </ul>
+                </div>
             </div>
 
             <div class="modal-footer">
                 <button (click)="cancelar()" type="button" class="btn btn-secondary bg-gradient border-dark" data-bs-dismiss="modal">Cancelar</button>
-                <button *ngIf="flag" (click)="publicar()" id="botonPublicar" type="button" class="btn btn-success bg-dark border-dark" data-bs-dismiss="modal">Publicar</button>
+                <button *ngIf="flag" (click)="publicar()" id="botonPublicar" type="button" class="btn btn-primary bg-dark border-dark" data-bs-dismiss="modal">Publicar</button>
             </div>
 
         </div>

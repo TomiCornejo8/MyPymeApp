@@ -1,24 +1,22 @@
-<div id="proveedor">
-  <div class="card bg-primary col-6">
-    <div class="card-body">
-      <h2 class="card-title">Calo</h2>
-      <p class="card-text">Email: </p>
-      <p class="card-text">Telefono: </p>
+<div id="proveedor" class="d-flex flex-row">
+  <div class="card bg-primary mb-2 p-2 col-6 me-2">
+    <div class="card-body m-1">
+      <h2 class="card-title">{{proveedor.nombre}}</h2>
+      <p class="card-text">Email: {{proveedor.email}}</p>
+      <p class="card-text">Telefono: {{proveedor.telefono}}</p>
       <p>
-        <button class="btn border border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <button (click)="insumoBtn()" class="btn border border-primary" type="button">
           Insumos
         </button>
       </p>
-      <div class="collapse" id="collapseExample">
-        <div class="card-body">
-          <ul>
-            <li>Queso</li>
-            <li>Queso crema</li>
-            <li>Queso granulado</li>
-            <li>Quesillo</li>
-          </ul>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div *ngIf="insumoFlag" class="p-2 col-6 card bg-primary mb-2">
+    <div class="card-body m-1">
+      <h2 class="card-title">Insumos:</h2>
+      <ul *ngFor="let insumo of proveedor.insumos">
+        <li>{{insumo.nombre}} ${{insumo.precio}}</li>
+      </ul>
     </div>
   </div>
 </div>
