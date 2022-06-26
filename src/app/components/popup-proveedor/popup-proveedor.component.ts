@@ -17,6 +17,7 @@ export class PopupProveedorComponent implements OnInit {
   nombreProveedor:string = '';
   emailProveedor:string = '';
   telefonoProveedor:string = '';
+  categoriaFlag:boolean = false;
   flag:boolean = false;
 
   constructor() { }
@@ -25,22 +26,25 @@ export class PopupProveedorComponent implements OnInit {
   }
 
   selecCategoria(value:string){
+    this.categoriaFlag = true;
     this.categoriaX = value;
+    this.camposLlenos();
   }
 
   cancelar(){
     this.nombreProveedor = this.emailProveedor = this.telefonoProveedor ='';
+    this.categoriaFlag = false;
     this.categoriaX = 'Categoria';
   }
 
   publicar(){
-    //this.subirProveedor.emit(new Proveedor(0,this.nombreProveedor,this.emailProveedor,this.telefonoProveedor));
+    this.subirProveedor.emit(new Proveedor(0,this.categoriaX,this.nombreProveedor,this.emailProveedor,this.telefonoProveedor,[]));
     this.cancelar();
     this.flag = false;
   }
 
   camposLlenos(){
-    if(this.nombreProveedor == '' || this.emailProveedor == '' || this.telefonoProveedor == '' ||  this.categoriaX == 'Categoria'){
+    if(this.nombreProveedor == '' || this.emailProveedor == '' || this.telefonoProveedor == '' || this.categoriaFlag == false){
       this.flag = false;
     }else{
       this.flag = true;

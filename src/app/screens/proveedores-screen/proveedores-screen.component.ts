@@ -22,15 +22,12 @@ export class ProveedoresScreenComponent implements OnInit {
     ]),
   ];
 
-  insumoProveedor:Insumo[] = [];
-
-  insumos:Insumo[] =[
-
-  ];
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  agregarProveedor(proveedor:Proveedor){
+    this.proveedores.push(proveedor);
+  }
 }

@@ -9,7 +9,7 @@
         </div>
         <div class="col-6 align-items">
             <div class="col-12 mt-3 mb-3">
-              <app-popup-proveedor [categorias]="categorias"></app-popup-proveedor>  
+              <app-popup-proveedor (subirProveedor)="agregarProveedor($event)" [categorias]="categorias"></app-popup-proveedor>  
             </div>
             <div *ngFor="let proveedor of proveedores" class="align-items">
                 <app-proveedor [proveedor]="proveedor"></app-proveedor>
