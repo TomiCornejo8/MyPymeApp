@@ -2,21 +2,25 @@
     <div class="card-body">
         <h5 class="Ingresar text-center">Inicar sesión</h5>
 
-        <!-- imput de Usuario -->
-        <div id="usuario">
-            <input type="text" class="form-control">
-            <p class="card-text">Usuario</p>
-        </div>
+        <form action="" [formGroup]="ingresarForm" (ngSubmit)="onIngresar(ingresarForm.value)">
+            <!-- imput de Usuario -->
+            <div id="usuario">
+                <input type="text" class="form-control" placeholder="ej: usuarioCognito" formControlName="usuario">
+                <!-- <input type="text" class="form-control" placeholder="Campo de texto" [(ngModel)]="nombre"> -->
+                <p class="card-text">Usuario</p>
+            </div>
 
-        <!-- imput de contraseña -->
-        <div id="clave">
-            <input type="password" class="form-control">
-            <p class="card-text">Clave</p>
-        </div>
+            <!-- imput de contraseña -->
+            <div id="clave">
+                <input type="password" class="form-control" placeholder="ej: *123PassworD456*" formControlName="clave">
+                <!-- <input type="password" class="form-control" placeholder="Campo de texto" [(ngModel)]="clave"> -->
+                <p class="card-text">Contraseña</p>
+            </div>
 
-        <!-- Boton de aceptar -->
-        <div class="text-center">
-            <button type="button" class="btn btn-dark">Iniciar</button>
-        </div>
+            <!-- Boton de aceptar -->
+            <div class="text-center">
+                <input type="submit" value="Iniciar" class="btn btn-success fadeIn fourth">
+            </div>
+        </form>
     </div>
 </div>

@@ -7,7 +7,7 @@
         <div class="col-2">
             <app-coleccion ></app-coleccion>
         </div>
-        <div class="col-8 pt-3 ">
+        <div class="col-7 pt-3 ">
             <!--manda la señal al recibir los datos de crear un nuevo producto-->
             <div class="col-12 mb-3">
                 <app-popup-producto (subirProducto)="modalProducto($event)"></app-popup-producto>
@@ -15,14 +15,14 @@
             <!--estructura donde se mantienen los productos creados-->
             <div class="container align-items-center">
                 <div class="row">
-                    <div *ngFor="let tarjetaProducto of productos " class="col-12 col-lg-4">
-                        <app-tarjeta-producto [tarjetaProducto]="tarjetaProducto"></app-tarjeta-producto>
+                    <div *ngFor="let tarjetaProducto of productos" class="col-12 col-lg-4">
+                        <app-tarjeta-producto (venta)="agregarVenta($event)" [tarjetaProducto]="tarjetaProducto"></app-tarjeta-producto>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-2">
-            <app-lista></app-lista>
+        <div class="col-3">
+            <app-lista [colaVenta]="colaVenta"></app-lista>
         </div>
     </div>
 </section>

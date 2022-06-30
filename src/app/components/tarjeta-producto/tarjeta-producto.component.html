@@ -2,7 +2,10 @@
     <img width="40px" height="130px" src="../../../assets/logoMiPymeApp.jpg" class="card-img-top" alt="">
     <div class="card-body">
         <p class="m-0 text-white">{{tarjetaProducto.nombre}}</p>
-        <p class="m-0 text-white">cant{{tarjetaProducto.stock}}</p>
+        <p class="m-0 text-white">stock: {{tarjetaProducto.stock}}</p>
         <p class="m-0 text-white">${{tarjetaProducto.precio}}</p>
+    </div>
+    <div>
+        <button (click)="carrito()" id="botonPublicar" type="button" class="btn btn-dark bg-gradient border-dark mb-1" data-bs-dismiss="modal">Agregar</button>
     </div>
 </div>
