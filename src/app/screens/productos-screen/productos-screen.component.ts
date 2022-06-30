@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/models/popup-producto.model';
-// import listaProducto from 'src/assets/json/post.json';
 
 @Component({
   selector: 'app-productos-screen',
@@ -12,6 +11,9 @@ export class ProductosScreenComponent implements OnInit {
   productos:Producto[] = [
     new Producto(1,"mayo",15,450,1,"aditivo","../../../assets/logoMiPymeApp.jpg")
   ];
+
+  colaVenta:Producto[] = [];
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,4 +22,9 @@ export class ProductosScreenComponent implements OnInit {
   modalProducto(producto:Producto){
     this.productos.push(producto);
   }
+
+  agregarVenta(producto:Producto){
+    this.colaVenta.push(producto);
+  }
+
 }

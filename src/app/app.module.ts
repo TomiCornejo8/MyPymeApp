@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +10,6 @@ import { ProductosScreenComponent } from './screens/productos-screen/productos-s
 import { ProveedoresScreenComponent } from './screens/proveedores-screen/proveedores-screen.component';
 import { VentasScreenComponent } from './screens/ventas-screen/ventas-screen.component';
 import { GastosScreenComponent } from './screens/gastos-screen/gastos-screen.component';
-import { FormsModule } from '@angular/forms';
 import { TarjetaProductoComponent } from './components/tarjeta-producto/tarjeta-producto.component';
 import { CategoriaComponent } from './components/categoria/categoria.component';
 import { ProveedorComponent } from './components/proveedor/proveedor.component';
@@ -24,6 +24,7 @@ import { NavbarInicioComponent } from './components/navbar-inicio/navbar-inicio.
 import { IngresarComponent } from './components/ingresar/ingresar.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { PopupProveedorComponent } from './components/popup-proveedor/popup-proveedor.component';
+import { VentaComponent } from './components/venta/venta.component';
 
 @NgModule({
   declarations: [
@@ -48,11 +49,13 @@ import { PopupProveedorComponent } from './components/popup-proveedor/popup-prov
     IngresarComponent,
     RegistrarseComponent,
     PopupProveedorComponent,
+    VentaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

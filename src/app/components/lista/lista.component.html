@@ -1,9 +1,16 @@
 <div id="lista" class="bg-primary">
-    <div style="width: 100%;">
-        <ul id="carta" class="list-group list-group-flush">
-            <li class="list-group">An item</li>
-            <li class="list-group">A second item</li>
-            <li class="list-group">A third item</li>
-        </ul>
+    <div id="carta">
+        <table class="table-primary">
+            <tbody>
+                <app-venta *ngFor="let venta of colaVenta" [venta]="venta"></app-venta>
+            </tbody>
+            <tfoot>
+                <p></p>
+            </tfoot>
+        </table>
+    </div>
+    <div>
+        <button (click)="cancelarVenta()" class="btn btn-dark bg-gradient border-dark mt-3" style="float: right;">Cancelar</button>
+        <button class="btn btn-dark bg-gradient border-dark mt-3" style="float: left;">Comprar</button>
     </div>
 </div>

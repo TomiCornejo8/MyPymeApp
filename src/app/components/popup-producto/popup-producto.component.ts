@@ -20,8 +20,6 @@ export class PopupProductoComponent implements OnInit {
 
   flag:boolean = false;
 
-  
-
   constructor() { }
 
   ngOnInit(): void {
