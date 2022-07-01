@@ -39,7 +39,6 @@ def insumo_detail_api_view(request,pk=None):
     insumo = Insumo.objects.filter(id = pk).first()
     if insumo:
         if request.method == 'DELETE':
-            insumo.img.delete(save=True)
             insumo.delete()
             return Response({'message':'Insumo deleted'},status = status.HTTP_200_OK)
     

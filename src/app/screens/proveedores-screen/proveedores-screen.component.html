@@ -5,18 +5,25 @@
 <section class="container-fluid p-0 align-items ">
     <div class="row">
         <div class="col-2">
-            <app-coleccion></app-coleccion>
+            <div id="coleccion" class="p-3 bg-primary">
+                <button (click)="editTypeCategoria('Agregar')" class="btn btn-dark bg-gradient ms-5 col-4" type="button" data-bs-toggle="modal" data-bs-target="#ModalCategoriaProveedor">➕</button>
+                <ul class="list-group bg-primary border-0">
+                    <app-categoria (editType)="editTypeCategoria($event)" (get)="getCategoria($event)" (delete)="deleteCategoria($event)" (categoriaX)="cambioCategoria($event)" *ngFor="let categoria of categorias" [categoria]="categoria"></app-categoria>
+                </ul>
+            </div>
         </div>
         <div class="col-6 align-items">
             <div class="col-12 mt-3 mb-3">
-              <app-popup-proveedor (subirProveedor)="agregarProveedor($event)" [categorias]="categorias"></app-popup-proveedor>  
+                <button (click)="editTypeProveedor('Agregar')" id="comentario" type="button" class="btn btn-primary bg-gradient" data-bs-toggle="modal" data-bs-target="#proveedorModal">➕</button> 
+                <app-popup-proveedor (editProveedor)="editProveedor($event)" (addProveedor)="addProveedor($event)" [type]="typeProveedor" [categorias]="categorias" [nombreProveedor]="proveedor.nombre" [telefonoProveedor]="proveedor.telefono" [emailProveedor]="proveedor.email"></app-popup-proveedor>  
             </div>
             <div *ngFor="let proveedor of proveedores" class="align-items">
-                <app-proveedor [proveedor]="proveedor"></app-proveedor>
+                <app-proveedor (deleteProveedor)="deleteProveedor($event)" (getProveedor)="getProveedor($event)" (editType)="editTypeProveedor($event)" [proveedor]="proveedor"></app-proveedor>
             </div>
         </div>
         <div class="col-4">
             <app-lista></app-lista>
         </div>
     </div>
+    <app-modal-categoria-proveedor [categoria]="categoria.categoria" [type]="typeCategoria" (addCategoria)="addCategoria($event)" (editCategoria)="editCategoria($event)"></app-modal-categoria-proveedor>
 </section>

@@ -2,13 +2,13 @@ import { Insumo } from "./popup-insumo.model";
 
 export class Proveedor{
     id:number;
-    categoria:string;
+    categoria:number;
     nombre:string;
     email:string;
     telefono:string;
     insumos:Insumo[];
 
-    constructor(id:number,categoria:string,nombre:string,email:string,telefono:string,insumos:Insumo[]){
+    constructor(categoria:number,nombre:string,email:string,telefono:string,insumos:Insumo[] = [],id:number = 0){
         this.id = id;
         this.categoria = categoria;
         this.nombre = nombre;

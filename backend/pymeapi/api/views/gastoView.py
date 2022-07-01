@@ -31,7 +31,6 @@ def gasto_detail_api_view(request,pk=None):
     gasto = Gasto.objects.filter(id = pk).first()
     if gasto:
         if request.method == 'DELETE':
-            gasto.img.delete(save=True)
             gasto.delete()
             return Response({'message':'Gasto deleted'},status = status.HTTP_200_OK)
     

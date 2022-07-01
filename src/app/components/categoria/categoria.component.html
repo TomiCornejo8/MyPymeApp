@@ -1,2 +1,11 @@
-<!--boton de Productos-->
-<a class="btn btn-dark ms-4" type="button">Lacteos</a>
+<li class="list-group-item bg-primary border-0">
+    <div class="ps-0 form-check m-0">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <input (input)="selec()" class="form-check-input bg-dark p-3 text-white" type="radio" name="flexRadioDefault" id="flexRadioDefault2" [checked]="categoria.categoria == 'Todos'">
+            <label class="p-1 bg-dark bg-gradient text-white rounded" aria-disabled="true" for="btnradio1">{{categoria.categoria}}</label>
+
+            <button (click)="eliminar()" class="p-1 btn btn-dark bg-gradient" type="button" *ngIf="categoria.categoria != 'Todos'">❌</button>
+            <button (click)="editar()" class="p-1 btn btn-dark bg-gradient" type="button" data-bs-toggle="modal" data-bs-target="#ModalCategoriaProveedor" *ngIf="categoria.categoria != 'Todos'">📝</button>
+        </div>
+    </div>
+</li>

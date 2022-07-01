@@ -46,7 +46,6 @@ def proveedor_detail_api_view(request,pk=None):
             return Response(proveedor_serializer.errors,status = status.HTTP_400_BAD_REQUEST)
 
         elif request.method == 'DELETE':
-            proveedor.img.delete(save=True)
             proveedor.delete()
             return Response({'message':'Proveedor deleted'},status = status.HTTP_200_OK)
     

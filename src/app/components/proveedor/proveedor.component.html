@@ -1,6 +1,8 @@
 <div id="proveedor" class="d-flex flex-row">
   <div class="card bg-primary mb-2 p-2 col-6 me-2">
     <div class="card-body m-1">
+      <button (click)="delete()" class="btn btn-primary bg-gradient border-secondary float-end" type="button">❌</button>
+      <button (click)="edit()" class="btn btn-primary bg-gradient border-secondary float-end me-3" type="button" data-bs-toggle="modal" data-bs-target="#proveedorModal">📝</button>
       <h2 class="card-title">{{proveedor.nombre}}</h2>
       <p class="card-text">Email: {{proveedor.email}}</p>
       <p class="card-text">Telefono: {{proveedor.telefono}}</p>

@@ -17,8 +17,8 @@ export class VentaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  deleteItem(venta:Producto){
-    this.ventas.splice(this.ventas.indexOf(venta),1);
-  }
+  // deleteItem(venta:Producto){
+  //   this.ventas.splice(this.ventas.indexOf(venta),1);
+  // }
 
 }

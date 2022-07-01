@@ -1,0 +1,20 @@
+<div class="modal fade" id="ModalCategoriaProveedor" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content bg-primary text-white">
+            
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">{{type}} categoría</h5>
+            </div>
+
+            <div class="modal-body">
+                <input (keyup)="checkText()" [(ngModel)]="categoria" type="text" class="form-control" placeholder="Categoría">
+            </div>
+
+            <div class="modal-footer">
+                <button (click)="cancel()" type="button" class="btn btn-secondary bg-gradient border-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button (click)="submit()" *ngIf="checkFlag" type="button" class="btn btn-dark bg-gradient border-secondary" data-bs-dismiss="modal">{{type}}</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -25,6 +25,8 @@ import { IngresarComponent } from './components/ingresar/ingresar.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { PopupProveedorComponent } from './components/popup-proveedor/popup-proveedor.component';
 import { VentaComponent } from './components/venta/venta.component';
+import {HttpClientModule} from '@angular/common/http';
+import { ModalCategoriaProveedorComponent } from './components/modal-categoria-proveedor/modal-categoria-proveedor.component'
 
 @NgModule({
   declarations: [
@@ -49,13 +51,15 @@ import { VentaComponent } from './components/venta/venta.component';
     IngresarComponent,
     RegistrarseComponent,
     PopupProveedorComponent,
-    VentaComponent
+    VentaComponent,
+    ModalCategoriaProveedorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

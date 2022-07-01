@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Insumo } from 'src/app/models/popup-insumo.model';
 import { Proveedor } from 'src/app/models/popup-proveedor.model';
 
@@ -10,6 +10,9 @@ import { Proveedor } from 'src/app/models/popup-proveedor.model';
 export class ProveedorComponent implements OnInit {
 
   @Input() proveedor:Proveedor;
+  @Output() editType =  new EventEmitter<string>();
+  @Output() getProveedor =  new EventEmitter<number>();
+  @Output() deleteProveedor = new EventEmitter<number>();
   insumoFlag:boolean = false;
 
   constructor() { }
@@ -23,5 +26,14 @@ export class ProveedorComponent implements OnInit {
     }else{
       this.insumoFlag = true;
     }
+  }
+
+  delete(){
+    this.deleteProveedor.emit(this.proveedor.id);
+  }
+
+  edit(){
+    this.editType.emit("Editar");
+    this.getProveedor.emit(this.proveedor.id);
   }
 }

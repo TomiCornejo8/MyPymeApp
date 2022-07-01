@@ -25,7 +25,7 @@ export class PopupCategoriaComponent implements OnInit {
   }
 
   publicar(){
-    this.subirCategoria.emit(new Categoria(this.id,this.nombre));
+    //this.subirCategoria.emit(new Categoria(this.id,this.nombre));
     this.cancelar();
     this.flag = false;
   }

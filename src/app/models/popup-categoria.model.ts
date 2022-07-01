@@ -1,9 +1,9 @@
 export class Categoria{
     id:number;
-    nombre:string;
+    categoria:string;
 
-    constructor(id:number,nombre:string){
+    constructor(categoria:string,id:number=0){
         this.id = id;
-        this.nombre = nombre;
+        this.categoria = categoria;
     }
 }

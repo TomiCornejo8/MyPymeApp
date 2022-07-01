@@ -39,7 +39,6 @@ def categoriaproveedor_detail_api_view(request,pk=None):
             return Response(categoriaproveedor_serializer.errors,status = status.HTTP_400_BAD_REQUEST)
 
         elif request.method == 'DELETE':
-            categoriaproveedor.img.delete(save=True)
             categoriaproveedor.delete()
             return Response({'message':'CategoriaProveedor deleted'},status = status.HTTP_200_OK)
     

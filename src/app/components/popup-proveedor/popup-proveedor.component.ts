@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CategoriaProveedor } from 'src/app/models/popup-categoriaProveedor.model';
+import { Categoria } from 'src/app/models/popup-categoria.model';
 import { Proveedor } from 'src/app/models/popup-proveedor.model';
 
 @Component({
@@ -9,37 +9,48 @@ import { Proveedor } from 'src/app/models/popup-proveedor.model';
 })
 export class PopupProveedorComponent implements OnInit {
 
-  @Input() categorias:CategoriaProveedor[];
-  @Output() subirProveedor = new EventEmitter<Proveedor>();
+  @Input() categorias:Categoria[];
+  @Input() type:string;
+  @Output() addProveedor = new EventEmitter<Proveedor>();
+  @Output() editProveedor = new EventEmitter<Proveedor>();
 
-  categoriaX:string = 'Categoria';
+  categoriaX:Categoria;
 
-  nombreProveedor:string = '';
-  emailProveedor:string = '';
-  telefonoProveedor:string = '';
+  @Input() nombreProveedor:string = '';
+  @Input() emailProveedor:string = '';
+  @Input() telefonoProveedor:string = '';
   categoriaFlag:boolean = false;
   flag:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.categoriaX = new Categoria("Categoría");
   }
 
-  selecCategoria(value:string){
+  selecCategoria(value:Categoria){
     this.categoriaFlag = true;
-    this.categoriaX = value;
+    this.categoriaX.categoria = value.categoria;
+    this.categoriaX.id = value.id;
     this.camposLlenos();
   }
 
   cancelar(){
-    this.nombreProveedor = this.emailProveedor = this.telefonoProveedor ='';
+    if(this.type == "Agregar"){
+      this.nombreProveedor = this.emailProveedor = this.telefonoProveedor ='';
+    }
     this.categoriaFlag = false;
-    this.categoriaX = 'Categoria';
+    this.categoriaX.categoria = 'Categoria';
   }
 
   publicar(){
-    this.subirProveedor.emit(new Proveedor(0,this.categoriaX,this.nombreProveedor,this.emailProveedor,this.telefonoProveedor,[]));
-    this.cancelar();
+    if(this.type == 'Agregar'){
+      this.addProveedor.emit(new Proveedor(this.categoriaX.id,this.nombreProveedor,this.emailProveedor,this.telefonoProveedor));
+      this.cancelar();
+    }else{
+      this.editProveedor.emit(new Proveedor(this.categoriaX.id,this.nombreProveedor,this.emailProveedor,this.telefonoProveedor));
+      this.cancelar();
+    }
     this.flag = false;
   }
 
