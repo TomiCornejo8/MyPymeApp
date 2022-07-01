@@ -4,7 +4,7 @@
 
 <section class="container-fluid p-0 align-items ">
     <div class="row">
-        <div class="col-2">
+        <div class="col-3">
             <div id="coleccion" class="p-3 bg-primary">
                 <button (click)="editTypeCategoria('Agregar')" class="btn btn-dark bg-gradient ms-5 col-4" type="button" data-bs-toggle="modal" data-bs-target="#ModalCategoriaProveedor">➕</button>
                 <ul class="list-group bg-primary border-0">
@@ -21,7 +21,7 @@
                 <app-proveedor (deleteProveedor)="deleteProveedor($event)" (getProveedor)="getProveedor($event)" (editType)="editTypeProveedor($event)" [proveedor]="proveedor"></app-proveedor>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-3">
             <app-lista></app-lista>
         </div>
     </div>
