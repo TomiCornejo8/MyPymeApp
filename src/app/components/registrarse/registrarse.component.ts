@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import {FormGroup,FormControl,Validators} from '@angular/forms'
+import { PymeService } from 'src/app/services/pyme/pyme.service';
+// import {FormGroup,FormControl,Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-registrarse',
@@ -7,18 +8,27 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
   styleUrls: ['./registrarse.component.sass']
 })
 export class RegistrarseComponent implements OnInit {
-  
-  registrarForm = new FormGroup({
-    usuario:new FormControl('',Validators.required),
-    clave:new FormControl('',Validators.required),
-    claveRepetida:new FormControl('',Validators.required)
-  })
 
-  constructor() { }
+  usuario:string;
+  clave1:string;
+  clave2:string;
+
+  constructor(private pymeService:PymeService) { }
 
   ngOnInit(): void {
   }
-  onRegistrar(form: any){
-    console.log(form)
+
+  registrar(){
+    if(this.usuario == "" || this.clave1 == "" || this.clave2 == ""){
+      alert("Llena todos los campos")
+    }else if(this.clave1 != this.clave2){
+      alert("Contraseñas diferentes, intentalo de nuevo");
+    }else{
+      this.pymeService.post(this.usuario,this.clave1).subscribe(data =>{
+        console.log(data);
+        sessionStorage.setItem('sitiomovil',JSON.stringify({"usuario":this.usuario}));
+        window.location.href="/productos-screen";
+      });
+    }
   }
 }

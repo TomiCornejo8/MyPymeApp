@@ -9,7 +9,7 @@ import { IngresarScreenComponent } from './screens/ingresar-screen/ingresar-scre
 import { RegistrarseScreenComponent } from './screens/registrarse-screen/registrarse-screen.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/productos-screen', pathMatch:'full'},
+  {path:'', redirectTo:'/inicio-screen', pathMatch:'full'},
   {path:'productos-screen', component:ProductosScreenComponent},
   {path:'gastos-screen', component:GastosScreenComponent},
   {path:'proveedores-screen', component:ProveedoresScreenComponent},

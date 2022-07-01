@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Insumo } from 'src/app/models/popup-insumo.model';
+import { Proveedor } from 'src/app/models/popup-proveedor.model';
+import { InsumoService } from 'src/app/services/insumo/insumo.service';
 
 @Component({
   selector: 'app-popup-insumo',
@@ -7,15 +9,13 @@ import { Insumo } from 'src/app/models/popup-insumo.model';
   styleUrls: ['./popup-insumo.component.sass']
 })
 export class PopupInsumoComponent implements OnInit {
-
-  @Output() subirInsumo = new EventEmitter<Insumo>();
-  @Input() proveedor:number;
+  @Input() proveedor:Proveedor;
 
   nombreInsumo:string;
   precioInsumo:number;
   flag:boolean = false;
 
-  constructor() { }
+  constructor(private insumoService:InsumoService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +27,9 @@ export class PopupInsumoComponent implements OnInit {
   }
 
   publicar(){
-    this.subirInsumo.emit(new Insumo(this.nombreInsumo,this.precioInsumo,this.proveedor));
+    this.insumoService.post(new Insumo(this.nombreInsumo,this.precioInsumo,this.proveedor.id)).subscribe(data=>{
+      this.proveedor.insumos.push(data);
+    });
     this.cancelar();
   }
 

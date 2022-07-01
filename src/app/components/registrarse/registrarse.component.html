@@ -1,28 +1,28 @@
 <div id="registrar" class="card bg-primary text-white" style="width: 25rem;margin:4% 35%;">
     <div class="card-body">
         <h5 class="Ingresar text-center">Registrarse</h5>
-        <form action="" [formGroup]="registrarForm" (ngSubmit)="onRegistrar(registrarForm.value)">
+        <!-- <form action="" [formGroup]="registrarForm" (ngSubmit)="onRegistrar(registrarForm.value)"> -->
             <!-- imput de Usuario -->
             <div id="usuario">
-                <input type="text" class="form-control" placeholder="ej: usuarioCognito" formControlName="usuario">
+                <input [(ngModel)]="usuario" type="text" class="form-control" placeholder="ej: UsuarioCognito">
                 <p class="card-text">Usuario</p>
             </div>
 
             <!-- imput de contraseña -->
             <div id="clave">
-                <input type="password" class="form-control" placeholder="ej: *123PassworD456*" formControlName="clave">
+                <input [(ngModel)]="clave1" type="password" class="form-control" placeholder="ej: *123PassworD456*">
                 <p class="card-text">Clave</p>
             </div>
 
             <div id="clave-repetida">
-                <input type="password" class="form-control" formControlName="claveRepetida">
+                <input [(ngModel)]="clave2" type="password" class="form-control" placeholder="ej: *123PassworD456*">
                 <p class="card-text">Repetir clave</p>
             </div>
 
             <!-- Boton de aceptar -->
             <div class="text-center">
-                <input type="submit" value="Registrarse" class="btn btn-dark bg-gradient fadeIn fourth" [routerLink]="['/productos-screen']">
+                <button (click)="registrar()" type="button" class="btn btn-dark bg-gradient">Registrarse</button>
             </div>
-        </form>
+        <!-- </form> -->
     </div>
 </div>

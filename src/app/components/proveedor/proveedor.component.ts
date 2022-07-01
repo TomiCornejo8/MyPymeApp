@@ -54,8 +54,4 @@ export class ProveedorComponent implements OnInit {
     this.editType.emit("Editar");
     this.getProveedor.emit(this.proveedor.id);
   }
-
-  agregarInsumo(){
-    
-  }
 }
