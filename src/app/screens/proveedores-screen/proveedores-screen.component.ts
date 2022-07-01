@@ -21,6 +21,8 @@ export class ProveedoresScreenComponent implements OnInit {
   proveedores:Proveedor[];
   proveedor:Proveedor;
 
+  insumo:Insumo;
+
   constructor(private categoriaService:CategoriaProveedorService,private proveedorService:ProveedorService) { }
 
   ngOnInit(): void {
@@ -121,5 +123,9 @@ export class ProveedoresScreenComponent implements OnInit {
     });
     this.getProveedor(id);
     this.proveedores.splice(this.proveedores.indexOf(this.proveedor),1);
+  }
+
+  subirInsumo(insumo:Insumo){
+    this.insumo = insumo;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Insumo } from 'src/app/models/popup-insumo.model';
 import { Proveedor } from 'src/app/models/popup-proveedor.model';
+import { InsumoService } from 'src/app/services/insumo/insumo.service';
 
 @Component({
   selector: 'app-proveedor',
@@ -15,9 +16,26 @@ export class ProveedorComponent implements OnInit {
   @Output() deleteProveedor = new EventEmitter<number>();
   insumoFlag:boolean = false;
 
-  constructor() { }
+  constructor(private insumoService:InsumoService) { }
   
   ngOnInit(): void {
+    this.listInsumos();
+  }
+
+  listInsumos(){
+    this.insumoService.get(this.proveedor.id).subscribe(data =>{
+      console.log(data);
+      this.proveedor.insumos = data;
+    });
+  }
+
+  deleteInsumo(id:number){
+    this.insumoService.delete(id).subscribe(data=>{
+      console.log(data);
+    });
+    let array = this.proveedor.insumos.filter(function (insumo) { return insumo.id == id; });
+    let insumo = array[0];
+    this.proveedor.insumos.splice(this.proveedor.insumos.indexOf(insumo),1);
   }
 
   insumoBtn(){
@@ -35,5 +53,9 @@ export class ProveedorComponent implements OnInit {
   edit(){
     this.editType.emit("Editar");
     this.getProveedor.emit(this.proveedor.id);
+  }
+
+  agregarInsumo(){
+    
   }
 }

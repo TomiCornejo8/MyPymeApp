@@ -1,4 +1,5 @@
 from django.urls import path
+from .views.pymeView import pyme_api_view, pyme_detail_api_view
 from .views.categoriaProveedorView import categoriaproveedor_api_view,categoriaproveedor_detail_api_view
 from .views.proveedorView import proveedor_api_view,proveedor_detail_api_view
 from .views.insumoView import insumo_api_view,insumo_detail_api_view
@@ -16,4 +17,7 @@ urlpatterns = [
 
     path('gasto/',gasto_api_view,name='gasto_api'),
     path('gasto/<int:pk>',gasto_detail_api_view,name='gasto_detail_api'),
+
+    path('pyme/',pyme_api_view,name='pyme_api'),
+    path('pyme/<str:usuario>/<str:clave>',pyme_detail_api_view,name='pyme_detail_api'),
 ]

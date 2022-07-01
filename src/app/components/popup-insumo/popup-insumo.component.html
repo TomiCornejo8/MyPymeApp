@@ -1,29 +1,28 @@
-<button id="comentario" type="button" class="btn btn-success bg-gradient" data-bs-toggle="modal"
-    data-bs-target="#insumoModal">
-    Agregar post ✉
-</button>
-
 <div class="modal fade " id="insumoModal" tabindex="-1" aria-labelledby="insumoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
 
         <div class="modal-content bg-primary container bg-primary p-3">
+            <div class="modal-header text-white">
+                <h5 class="modal-title" id="ModalLabel">Agregar Insumo</h5>
+            </div>
+
             <div class="modal-body">
                 <div class="mb-2 row">
                     <label for="nombreInsumo" class="col-sm-2 col-form-label text-white">Nombre</label>
                     <div class="col-sm-10">
-                        <input (keyup)="camposLlenos()" [(ngModel)]="nombreInsumo" class="form-control" type="text" aria-label="default input example" id="nombreInsumo">
+                        <input (keyup)="camposLlenos()" [(ngModel)]="nombreInsumo" class="form-control" type="text" aria-label="default input example" id="nombreInsumo" placeholder="Insumo">
                     </div>
                 </div>
                 <div class="mb-2 row">
                     <label for="precioInsumo" class="col-sm-2 col-form-label text-white">Precio</label>
                     <div class="col-sm-10">
-                        <input (keyup)="camposLlenos()" [(ngModel)]="precioInsumo" class="form-control" type="text" aria-label="default input example" id="precioInsumo">
+                        <input (keyup)="camposLlenos()" [(ngModel)]="precioInsumo" class="form-control" type="text" aria-label="default input example" id="precioInsumo" placeholder="Precio">
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button (click)="cancelar()" type="button" class="btn btn-secondary bg-gradient border-dark" data-bs-dismiss="modal">Cancelar</button>
-                <button *ngIf="flag" (click)="publicar()" id="botonPublicar" type="button" class="btn btn-dark bg-gradient border-dark" data-bs-dismiss="modal">Publicar</button>
+                <button *ngIf="flag" (click)="publicar()" id="botonPublicar" type="button" class="btn btn-dark bg-gradient border-dark" data-bs-dismiss="modal">Agregar</button>
             </div>
         </div>
     </div>

@@ -10,15 +10,10 @@ class InsumoSerializer(serializers.ModelSerializer):
         model =Insumo
         fields = '__all__'
 
-@api_view(['GET','POST'])
+@api_view(['POST'])
 def insumo_api_view(request):
     
-    if request.method == 'GET':
-        insumos = Insumo.objects.all()
-        insumos_serializer = InsumoSerializer(insumos,many = True)
-        return Response(insumos_serializer.data,status = status.HTTP_200_OK)
-    
-    elif request.method == 'POST':
+    if request.method == 'POST':
         insumo_serializer = InsumoSerializer(data = request.data)
         if insumo_serializer.is_valid():
             insumo_serializer.save()

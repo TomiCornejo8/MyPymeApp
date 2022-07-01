@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Insumo } from 'src/app/models/popup-insumo.model';
 
 @Component({
@@ -9,9 +9,10 @@ import { Insumo } from 'src/app/models/popup-insumo.model';
 export class PopupInsumoComponent implements OnInit {
 
   @Output() subirInsumo = new EventEmitter<Insumo>();
+  @Input() proveedor:number;
 
-  nombreInsumo:string = '';
-  precioInsumo:number = -1;
+  nombreInsumo:string;
+  precioInsumo:number;
   flag:boolean = false;
 
   constructor() { }
@@ -21,17 +22,17 @@ export class PopupInsumoComponent implements OnInit {
 
   cancelar(){
     this.nombreInsumo = '';
-    this.precioInsumo = -1;
-  }
-
-  publicar(){
-    //this.subirInsumo.emit(new Insumo(this.nombreInsumo,this.precioInsumo));
-    this.cancelar();
+    this.precioInsumo = 0;
     this.flag = false;
   }
 
+  publicar(){
+    this.subirInsumo.emit(new Insumo(this.nombreInsumo,this.precioInsumo,this.proveedor));
+    this.cancelar();
+  }
+
   camposLlenos(){
-    if(this.nombreInsumo == '' || this.precioInsumo == -1){
+    if(this.nombreInsumo == '' || this.precioInsumo == 0){
       this.flag = false;
     }else{
       this.flag = true;

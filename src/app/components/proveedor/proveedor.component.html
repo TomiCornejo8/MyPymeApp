@@ -16,10 +16,10 @@
   <div *ngIf="insumoFlag" class="p-2 col-6 card bg-primary mb-2">
     <div class="card-body m-1">
       <h2 class="card-title">Insumos:</h2>
+      <button (click)="agregarInsumo()" id="comentario" type="button" class="btn btn-primary bg-gradient" data-bs-toggle="modal" data-bs-target="#insumoModal">➕</button>
       <ul *ngFor="let insumo of proveedor.insumos">
-        <li>{{insumo.nombre}} ${{insumo.precio}}</li>
+        <li>{{insumo.nombre}} ${{insumo.precio}} <button (click)="deleteInsumo(insumo.id)" class="btn btn-primary bg-gradient border-secondary" type="button">❌</button></li>
       </ul>
     </div>
   </div>
 </div>
-

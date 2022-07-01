@@ -18,7 +18,7 @@
                 <app-popup-proveedor (editProveedor)="editProveedor($event)" (addProveedor)="addProveedor($event)" [type]="typeProveedor" [categorias]="categorias" [nombreProveedor]="proveedor.nombre" [telefonoProveedor]="proveedor.telefono" [emailProveedor]="proveedor.email"></app-popup-proveedor>  
             </div>
             <div *ngFor="let proveedor of proveedores" class="align-items">
-                <app-proveedor (deleteProveedor)="deleteProveedor($event)" (getProveedor)="getProveedor($event)" (editType)="editTypeProveedor($event)" [proveedor]="proveedor"></app-proveedor>
+                <app-proveedor *ngIf="proveedor.categoria == categoriaX.id || categoriaX.categoria == 'Todos'" (deleteProveedor)="deleteProveedor($event)" (getProveedor)="getProveedor($event)" (editType)="editTypeProveedor($event)" [proveedor]="proveedor"></app-proveedor>
             </div>
         </div>
         <div class="col-4">
@@ -26,4 +26,5 @@
         </div>
     </div>
     <app-modal-categoria-proveedor [categoria]="categoria.categoria" [type]="typeCategoria" (addCategoria)="addCategoria($event)" (editCategoria)="editCategoria($event)"></app-modal-categoria-proveedor>
+    <app-popup-insumo (subirInsumo)="subirInsumo($event)" [proveedor]="proveedor.id"></app-popup-insumo>
 </section>
