@@ -53,6 +53,6 @@ def pyme_detail_api_view(request,usuario=None,clave=None):
                 pyme.delete()
                 return Response({'message':'Pyme deleted'},status = status.HTTP_200_OK)
         else:
-            return Response({'message':'Pyme dont have accces'},status = status.HTTP_400_BAD_REQUEST)
+            return Response({'message':'Pyme dont have accces'},status = status.HTTP_203_NON_AUTHORITATIVE_INFORMATION)
 
-    return Response({'message':'Pyme not found'},status = status.HTTP_400_BAD_REQUEST)
+    return Response({'message':'Pyme not found'},status = status.HTTP_204_NO_CONTENT)

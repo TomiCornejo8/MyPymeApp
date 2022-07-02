@@ -26,6 +26,10 @@ export class ProveedoresScreenComponent implements OnInit {
   constructor(private categoriaService:CategoriaProveedorService,private proveedorService:ProveedorService) { }
 
   ngOnInit(): void {
+    let datos = sessionStorage.getItem('sitiomovil');
+    if(!datos){
+      window.location.href="/productos-screen";
+    }
     this.listCategoria();
     this.categoria = new Categoria("");
     this.listProveedor();
@@ -123,9 +127,5 @@ export class ProveedoresScreenComponent implements OnInit {
     });
     this.getProveedor(id);
     this.proveedores.splice(this.proveedores.indexOf(this.proveedor),1);
-  }
-
-  subirInsumo(insumo:Insumo){
-    this.insumo = insumo;
   }
 }

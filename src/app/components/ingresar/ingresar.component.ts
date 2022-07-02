@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { PymeService } from 'src/app/services/pyme/pyme.service';
 
 @Component({
   selector: 'app-ingresar',
@@ -7,22 +7,28 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
   styleUrls: ['./ingresar.component.sass']
 })
 export class IngresarComponent implements OnInit {
-  nombre:string='';
-  clave:string='';
 
-  ingresarForm = new FormGroup({
-    usuario:new FormControl('',Validators.required),
-    clave:new FormControl('',Validators.required),
-  })
+  usuario:string = "";
+  clave:string = "";
 
-  constructor() { 
-  }
-
-  onIngresar(form: any){
-    console.log(form)
+  constructor(private pymeService:PymeService) {
   }
 
   ngOnInit(): void {
   }
-
+  
+  ingresar(){
+    if(this.usuario == "" || this.clave == ""){
+      alert("Rellena todos los campos");
+    }else{
+      this.pymeService.get(this.usuario,this.clave).subscribe(data=>{
+        if(data){
+          sessionStorage.setItem('sitiomovil',JSON.stringify({"usuario":data.usuario}));
+          window.location.href="/productos-screen";
+        }else{
+          alert("El nombre de usuario o contraseña no corresponden");
+        }
+      });
+    }
+  }
 }

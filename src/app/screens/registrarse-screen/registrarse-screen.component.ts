@@ -10,6 +10,10 @@ export class RegistrarseScreenComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let datos = sessionStorage.getItem('sitiomovil');
+    if(datos){
+      window.location.href="/productos-screen";
+    }
   }
 
 }

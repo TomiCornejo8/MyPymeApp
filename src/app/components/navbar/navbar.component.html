@@ -7,7 +7,7 @@
 
         <div class="" id="navbarColor01">
             <ul class="navbar-nav mb-2 mb-lg-0 list-group-horizontal" id="navbar">
-
+                <h3 class="text-white"><b>{{usuario}}</b></h3>
                 <!--boton de Productos-->
                 <li class="nav-item btn-dark ms-4 border-dark bg-gradient">
                     <a class="nav-link active" aria-current="page" [routerLink]="['/productos-screen']">Productos</a>
@@ -29,18 +29,18 @@
                 </li>
                 
                 <!--boton de Exportar productos-->
-                <li class="nav-item btn-dark ms-4 border-dark bg-gradient">
+                <!-- <li class="nav-item btn-dark ms-4 border-dark bg-gradient">
                     <a class="nav-link active" [routerLink]="['']">Exportar productos</a>
-                </li>
+                </li> -->
             
                 <!--boton de Importar productos-->
-                <li class="nav-item btn-dark ms-4 border-dark bg-gradient">
+                <!-- <li class="nav-item btn-dark ms-4 border-dark bg-gradient">
                     <a class="nav-link active" [routerLink]="['']">Importar productos</a>
-                </li>
+                </li> -->
 
                 <!--boton Cerrar sesion-->
                 <li class="nav-item btn-dark mx-4 border-dark bg-gradient">
-                    <a class="nav-link active" [routerLink]="['/inicio-screen']">Cerrar sesion</a>
+                    <a (click)="cerrarSesion()" class="nav-link active" [routerLink]="['/inicio-screen']">Cerrar sesion</a>
                 </li>
 
             </ul>
