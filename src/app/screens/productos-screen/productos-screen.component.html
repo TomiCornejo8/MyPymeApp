@@ -16,7 +16,7 @@
             <div class="container align-items-center">
                 <div class="row">
                     <div *ngFor="let tarjetaProducto of productos " class="col-12 col-lg-4">
-                        <app-tarjeta-producto [tarjetaProducto]="tarjetaProducto"></app-tarjeta-producto>
+                        <app-tarjeta-producto [tarjetaProducto]="tarjetaProducto" (nombreProductoEliminar)="eliminarProducto($event)"></app-tarjeta-producto>
                     </div>
                 </div>
             </div>
